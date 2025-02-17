@@ -28,9 +28,12 @@ type Dialog interface {
 	AppendUserMessage(message string)
 	AppendSystemMessage(message string)
 	GetMessages() []Message
+	GetLastMessage() Message
 
 	SetModelSize(size ModelSize) error
 	SetTools(tools []Tool) error
+
+	Duplicate() Dialog
 }
 
 type Client interface {
