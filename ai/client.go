@@ -38,5 +38,6 @@ type Dialog interface {
 
 type Client interface {
 	NewDialog() Dialog
+	RequestCompletion(dialog Dialog) error
 	Query(query string, dialog Dialog) error
 }
