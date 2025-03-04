@@ -26,6 +26,7 @@ type Message interface {
 
 type Dialog interface {
 	AppendUserMessage(message string)
+	AppendUserMessageWithImage(message string, image string)
 	AppendSystemMessage(message string)
 	GetMessages() []Message
 	GetLastMessage() Message
@@ -38,6 +39,7 @@ type Dialog interface {
 
 type Client interface {
 	NewDialog() Dialog
+
 	RequestCompletion(dialog Dialog) error
 	Query(query string, dialog Dialog) error
 }
